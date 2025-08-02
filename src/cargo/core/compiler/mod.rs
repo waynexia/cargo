@@ -40,7 +40,7 @@ mod compilation;
 mod compile_kind;
 mod crate_type;
 mod custom_build;
-pub(crate) mod fingerprint;
+pub mod fingerprint;
 pub mod future_incompat;
 pub(crate) mod job_queue;
 pub(crate) mod layout;

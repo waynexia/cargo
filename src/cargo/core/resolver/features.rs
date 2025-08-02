@@ -91,14 +91,14 @@ pub struct FeatureOpts {
 /// dependencies are computed, and can result in longer build times with
 /// `cargo test` because the lib may need to be built 3 times instead of
 /// twice.
-#[derive(Copy, Clone, PartialEq)]
+#[derive(Copy, Clone, PartialEq, Debug)]
 pub enum HasDevUnits {
     Yes,
     No,
 }
 
 /// Flag to indicate that target-specific filtering should be disabled.
-#[derive(Copy, Clone, PartialEq)]
+#[derive(Copy, Clone, PartialEq, Debug)]
 pub enum ForceAllTargets {
     Yes,
     No,

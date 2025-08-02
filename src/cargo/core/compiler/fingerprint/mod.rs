@@ -1431,7 +1431,10 @@ impl StaleItem {
 ///
 /// Information like file modification time is only calculated for path
 /// dependencies.
-fn calculate(build_runner: &mut BuildRunner<'_, '_>, unit: &Unit) -> CargoResult<Arc<Fingerprint>> {
+pub fn calculate(
+    build_runner: &mut BuildRunner<'_, '_>,
+    unit: &Unit,
+) -> CargoResult<Arc<Fingerprint>> {
     // This function is slammed quite a lot, so the result is memoized.
     if let Some(s) = build_runner.fingerprints.get(unit) {
         return Ok(Arc::clone(s));
@@ -1868,7 +1871,7 @@ fn build_root(build_runner: &BuildRunner<'_, '_>) -> PathBuf {
 ///
 /// If dirty, it then restores the detailed information
 /// from the fingerprint JSON file, and provides an rich dirty reason.
-fn compare_old_fingerprint(
+pub fn compare_old_fingerprint(
     unit: &Unit,
     old_hash_path: &Path,
     new_fingerprint: &Fingerprint,
