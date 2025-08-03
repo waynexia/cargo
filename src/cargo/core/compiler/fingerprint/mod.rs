@@ -963,7 +963,7 @@ impl Fingerprint {
         *self.memoized_hash.lock().unwrap() = None;
     }
 
-    fn hash_u64(&self) -> u64 {
+    pub fn hash_u64(&self) -> u64 {
         if let Some(s) = *self.memoized_hash.lock().unwrap() {
             return s;
         }
